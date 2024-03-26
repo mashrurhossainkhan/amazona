@@ -60,7 +60,7 @@ small {
   padding: 10px;
 }
 
-.loginDiv {
+.centeringDiv {
   display: flex;
   justify-content: center;
   align-items: center;

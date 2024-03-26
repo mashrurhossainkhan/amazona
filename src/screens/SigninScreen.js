@@ -42,7 +42,7 @@ export default function SigninScreen(props) {
     }
   };
   return (
-    <div className="loginDiv">
+    <div className="centeringDiv">
       <form className="form" onSubmit={submitHandler}>
         <p className="Tabs_Head">WELCOME BACK</p>
         {loading && <LoadingBox></LoadingBox>}
