@@ -8,7 +8,7 @@ import {
 } from '../constants/verificationContants';
 import Axios from 'axios';
 
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 
 export const createVerification =
   (varDetails) => async (dispatch, getState) => {

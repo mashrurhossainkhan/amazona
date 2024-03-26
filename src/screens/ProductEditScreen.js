@@ -59,7 +59,7 @@ export default function ProductEditScreen(props) {
   } = productCategoryList;
 
   //const API = 'https://backend.dokanbhai.dokanbhai.com:3002';
-  const API = 'https://localhost:5001';
+  const API = 'http://localhost:5001';
 
   useEffect(() => {
     window.scrollTo(0, 0);

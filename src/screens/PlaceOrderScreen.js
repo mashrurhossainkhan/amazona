@@ -8,6 +8,7 @@ import MessageBox from '../components/MessageBox';
 import ShippingAddressScreen from './ShippingAddressScreen';
 
 export default function PlaceOrderScreen(props) {
+  const API = 'http://localhost:5001';
   const cart = useSelector((state) => state.cart);
   const userSignin = useSelector((state) => state.userSignin);
   const [isShipAddressSubmitted, setIsShipAddressSubmitted] = useState(true);
@@ -85,7 +86,7 @@ export default function PlaceOrderScreen(props) {
                   <div className="row">
                     <div>
                       <img
-                        src={item.image.split(',')[0]}
+                        src={API + item.image.split(',')[0]}
                         alt={item.name}
                         className="small"
                       ></img>

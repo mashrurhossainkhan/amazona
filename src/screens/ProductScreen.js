@@ -7,7 +7,7 @@ import MessageBox from '../components/MessageBox';
 import ImageCarousel from '../components/ProductScreenComponents/ImageCarousel';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
-
+import { BackendAPI } from '../api/backendAPI';
 const ProductScreen = (props) => {
   //we are going to fetch product from redux store
   //const product = data.products.find((x) => x._id === props.match.params.id)
@@ -381,7 +381,7 @@ const ProductScreen = (props) => {
                   <div key={index}>
                     <img
                       className="description"
-                      src={productImg}
+                      src={BackendAPI + productImg}
                       alt="Loading..."
                     />
                   </div>

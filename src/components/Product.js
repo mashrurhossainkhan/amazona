@@ -4,7 +4,7 @@ import Rating from './Rating';
 
 const Product = (props) => {
   const { product } = props;
-
+  const API = 'http://localhost:5001';
   if (product.name != null) {
     var productName = product.name.substr(0, 40);
   }
@@ -14,7 +14,7 @@ const Product = (props) => {
         <div>
           <img
             className="medium1"
-            src={product.image.split(',')[0]}
+            src={API + product.image.split(',')[0]}
             alt=""
             loading="lazy"
             width="240"

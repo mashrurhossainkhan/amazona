@@ -31,7 +31,7 @@ import {
   PRODUCT_UPDATE_SUCCESS,
 } from '../constants/productConstants';
 
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 
 export const listProductsWithoutPagination = () => async (dispatch) => {
   dispatch({

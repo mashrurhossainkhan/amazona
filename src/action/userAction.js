@@ -48,7 +48,7 @@ import {
 } from '../constants/userConstants';
 import { createVerification } from './verificationAction';
 
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 
 export const signin = (phnNo, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { phnNo, password } });

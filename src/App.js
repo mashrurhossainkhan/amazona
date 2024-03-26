@@ -41,7 +41,6 @@ import ForgetPasswordForm from './screens/ForgetPasswordForm';
 import NewPassword from './screens/NewPasswordScreen';
 import VerifyForgetPassword from './screens/VerifyForgetPassword';
 import SingleProdSc from './screens/SingleProd/SingleProdScreen';
-
 /*
 
 

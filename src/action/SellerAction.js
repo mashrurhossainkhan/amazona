@@ -3,7 +3,7 @@ import {
   SELLER_SIGNUP_REQUEST1,
   SELLER_SIGNUP_SUCCESS1,
 } from '../constants/SellerConstants';
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 export const Seller_Registration_page1 = (email, phnNo) => async (dispatch) => {
   dispatch({
     type: SELLER_SIGNUP_REQUEST1,

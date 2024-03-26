@@ -23,7 +23,7 @@ import {
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
 } from '../constants/orderConstants';
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 
 export const createOrder = (order) => async (dispatch, getState) => {
   order.shippingAddress.address = `Area: ${order.shippingAddress.area},Full Address: ${order.shippingAddress.address}`;

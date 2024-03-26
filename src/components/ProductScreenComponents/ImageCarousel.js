@@ -1,6 +1,7 @@
 var Carousel = require('react-responsive-carousel').Carousel;
 
 const ImageCarousel = (props) => {
+  const API = 'http://localhost:5001';
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -39,7 +40,7 @@ const ImageCarousel = (props) => {
               <img
                 className="large"
                 style={{ backgroundColor: '#000000' }}
-                src={productImg}
+                src={API + productImg}
                 alt="Loading..."
               />
             )}

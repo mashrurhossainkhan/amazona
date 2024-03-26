@@ -10,7 +10,7 @@ import {
   SHOP_NAMES_REQUEST,
   SHOP_NAMES_SUCCESS,
 } from '../constants/shopConstant';
-const API = 'https://localhost:5001';
+const API = 'http://localhost:5001';
 
 export const shopNames = () => async (dispatch) => {
   dispatch({ type: SHOP_NAMES_REQUEST });
