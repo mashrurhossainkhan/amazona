@@ -12,9 +12,8 @@ import {
   PRODUCT_CREATE_RESET,
   PRODUCT_DELETE_RESET,
 } from '../constants/productConstants';
-import { GrEdit } from 'react-icons/gr'
-import {MdDelete} from 'react-icons/md'
-
+import { GrEdit } from 'react-icons/gr';
+import { MdDelete } from 'react-icons/md';
 
 export default function ProductListScreen(props) {
   const { pageNumber = 1 } = useParams();
@@ -22,7 +21,7 @@ export default function ProductListScreen(props) {
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
-  
+
   const productCreate = useSelector((state) => state.productCreate);
   const {
     loading: loadingCreate,
@@ -45,26 +44,26 @@ export default function ProductListScreen(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (successCreate) {
-        dispatch({ type: PRODUCT_CREATE_RESET });
-        props.history.push(`/product/${createdProduct._id}/edit`);
-      }
-      if (successDelete) {
-        dispatch({ type: PRODUCT_DELETE_RESET });
-      }
-      dispatch(
-        listProductsAll({ seller: sellerMode ? userInfo._id : '', pageNumber })
-      );
-    }, [
-      createdProduct,
-      dispatch,
-      props.history,
-      sellerMode,
-      successCreate,
-      successDelete,
-      userInfo._id,
-      pageNumber,
-    ]);
-  
+      dispatch({ type: PRODUCT_CREATE_RESET });
+      props.history.push(`/product/${createdProduct._id}/edit`);
+    }
+    if (successDelete) {
+      dispatch({ type: PRODUCT_DELETE_RESET });
+    }
+    dispatch(
+      listProductsAll({ seller: sellerMode ? userInfo._id : '', pageNumber })
+    );
+  }, [
+    createdProduct,
+    dispatch,
+    props.history,
+    sellerMode,
+    successCreate,
+    successDelete,
+    userInfo._id,
+    pageNumber,
+  ]);
+
   const deleteHandler = (product) => {
     /// TODO: dispatch delete action
     if (window.confirm('Are you sure to delete?')) {
@@ -72,14 +71,16 @@ export default function ProductListScreen(props) {
     }
   };
   const createHandler = () => {
-  
     dispatch(createProduct());
   };
   return (
     <div>
-        <div className="row">
-       
-        <button type="button" className="btn_marchant_account" onClick={createHandler}>
+      <div className="row">
+        <button
+          type="button"
+          className="btn_marchant_account"
+          onClick={createHandler}
+        >
           Create Product
         </button>
       </div>
@@ -95,51 +96,49 @@ export default function ProductListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-<>
-<div className='responsiveTable'>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Seq No</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>Sub Category</th>
-                <th>ACTIONS</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr key={product._id}>
-                  <td>{product.productIdMain}</td>
-                  <td>{product.seqNo}</td>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
-                  <td>{product.category}</td>
-                  <td>{product.sub_category}</td>
-                  <td>
-                    <button
-                      type="button"
-                     
-                      onClick={() =>
-                        props.history.push(`/product/${product._id}/edit`)
-                      }
-                    >
-                      <GrEdit/>
-                    </button>
-                    <button
-                      type="button"
-                     
-                      onClick={() => deleteHandler(product)}
-                    >
-                      <MdDelete/>
-                    </button>
-                  </td>
+        <>
+          <div className="responsiveTable">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Seq No</th>
+                  <th>NAME</th>
+                  <th>PRICE</th>
+                  <th>CATEGORY</th>
+                  <th>Sub Category</th>
+                  <th>ACTIONS</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {products.map((product) => (
+                  <tr key={product._id}>
+                    <td>{product.productIdMain}</td>
+                    <td>{product.seqNo}</td>
+                    <td>{product.name}</td>
+                    <td>{product.price}</td>
+                    <td>{product.category}</td>
+                    <td>{product.sub_category}</td>
+                    <td>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          props.history.push(`/product/${product._id}/edit`)
+                        }
+                      >
+                        <GrEdit />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => deleteHandler(product)}
+                      >
+                        <MdDelete />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
           <div className="row center pagination">
             {[...Array(pages).keys()].map((x) => (
@@ -151,7 +150,7 @@ export default function ProductListScreen(props) {
                 {x + 1}
               </Link>
             ))}
-           </div>
+          </div>
         </>
       )}
     </div>
