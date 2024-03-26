@@ -59,6 +59,12 @@ small {
 
   padding: 10px;
 }
+
+.loginDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .homepageHeads {
   font-size: 24px;
   font-weight: 400;
@@ -270,7 +276,8 @@ textarea button {
 }
 
 .link_tabs {
-  color: #5663f0;
+  color: #000;
+  text-decoration: underline;
   font-size: 17px;
   margin-left: 12px;
   margin-top: 0px;

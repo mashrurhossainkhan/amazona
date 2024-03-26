@@ -185,12 +185,9 @@ const Header = () => {
             </div>
           ) : (
             <>
-              <button onClick={handleClickOpen} className="headerBtn">
-                Log In
-              </button>
-              <Dialog open={open} onClose={handleClose}>
-                <LoginTabs />
-              </Dialog>
+              <Link to="/signin">
+                <button className="headerBtn">Log In</button>
+              </Link>
             </>
           )}
           {userInfo && userInfo.isSeller && (
