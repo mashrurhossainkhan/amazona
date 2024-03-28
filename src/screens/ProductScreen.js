@@ -79,7 +79,7 @@ const ProductScreen = (props) => {
             className="rowProdTop top"
             style={{ backgroundColor: '#ffffff' }}
           >
-            <div className="col-2-revised singleProductPageImgs">
+            <div className="col-3-revised singleProductPageImgs">
               <ImageCarousel
                 item={product.image
                   .slice(0, product.image.length - 1)
@@ -96,17 +96,7 @@ const ProductScreen = (props) => {
                       </div>
                     </div>
                   </li>
-                  {/*
-                                <li>
-                                    <div className="row">
-                                    <Rating
-                                        key={product._id}
-                                        rating={product.rating}
-                                        numReviews={product.numReviews}
-                                    ></Rating>
-                                    </div>
-                                </li>
-                                 */}
+
                   <li>
                     <div className="row">
                       <div className="type" key={product._id}>
@@ -124,18 +114,19 @@ const ProductScreen = (props) => {
                     </div>
                   </li>
                   <li>
-                    {/* 
-                              <h3>
-                                {product.seller != null ? 
-                               <a
-                               style={{color:"#797979"}} 
-                               key={product._id}
-                               href={`/seller/${product.seller._id}`}>
-                                 Seller: View Other Products of this shop
-                             </a> : ""  
-                              }
-                              </h3>
-                              */}
+                    <h3>
+                      {product.seller != null ? (
+                        <a
+                          style={{ color: '#797979' }}
+                          key={product._id}
+                          href={`/seller/${product.seller._id}`}
+                        >
+                          Seller: View Other Products of this shop
+                        </a>
+                      ) : (
+                        ''
+                      )}
+                    </h3>
                   </li>
                   <li>
                     <div className="row">
@@ -271,7 +262,7 @@ const ProductScreen = (props) => {
                         <li>
                           <button
                             onClick={addToCartHandler}
-                            className="addtoCardbtn"
+                            className="headerBtn"
                             style={{ margin: '.7vw' }}
                           >
                             Add to Cart
@@ -283,20 +274,6 @@ const ProductScreen = (props) => {
                   )}
                 </ul>
               </div>
-            </div>
-
-            <div className="col-1-side rightsideSingleProduct">
-              <p>Delivery Options</p>
-
-              <p>Home Delivery</p>
-              <p className="bolded">Depends on your location</p>
-              <br />
-              <p>Return &amp; Warranty</p>
-              <p>Warranty</p>
-              <p className="bolded">{product.warenteeDays}</p>
-              <br />
-              <p>Return</p>
-              <p className="bolded">{product.returnDays}</p>
             </div>
           </div>
 

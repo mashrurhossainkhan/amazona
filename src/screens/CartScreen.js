@@ -141,7 +141,7 @@ const CartScreen = (props) => {
               <button
                 type="button"
                 onClick={checkoutHandler}
-                className="btn_marchant_account block"
+                className="headerBtn"
                 disabled={cartItems.length === 0}
               >
                 Proceed to Checkout

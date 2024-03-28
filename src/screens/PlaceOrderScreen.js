@@ -176,7 +176,7 @@ export default function PlaceOrderScreen(props) {
                 <button
                   type="button"
                   onClick={placeOrderHandler}
-                  className="btn_marchant_account"
+                  className="headerBtn"
                   disabled={cart.cartItems.length === 0}
                 >
                   Place Order
